@@ -1,0 +1,11 @@
+<div class="page-container">
+  <h1>Portas</h1>
+
+  <div class="links">
+    <div class="link" [routerLink]="['/door/porta1']" [class.unlocked]="isPageUnlocked('porta1')">Porta 1</div>
+    <div class="link" [routerLink]="['/door/porta2']" [class.unlocked]="isPageUnlocked('porta2')" [class.locked]="!isPageUnlocked('porta1')">Porta 2</div>
+    <div class="link" [routerLink]="['/door/porta3']" [class.unlocked]="isPageUnlocked('porta3')" [class.locked]="!isPageUnlocked('porta2')">Porta 3</div>
+  </div>
+
+  <router-outlet name="outletDoors"></router-outlet>
+</div>

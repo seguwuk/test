@@ -1,0 +1,12 @@
+.link.locked {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .locked {
+    color: #ccc;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+  }

@@ -1,0 +1,6 @@
+<div class="page-container">
+    <h1>O seu gato:</h1>
+    <div *ngIf="isPageUnlocked('gato')" class="cat-descripton">Seu gato está bem</div>
+    <div *ngIf="!isPageUnlocked('gato')" class="locked">Gato trancado, é necessário abrir as portas anteriores antes.</div>
+  </div>
+  
