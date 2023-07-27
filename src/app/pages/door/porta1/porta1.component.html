@@ -1,1 +1,13 @@
-<p>porta1 works!</p>
+<div class="cadeado-container">
+    <div class="cadeado-body">
+      <div class="cadeado-travas">
+        <div class="trava" [class.open]="isTravaOpen(1)"></div>
+        <div class="trava" [class.open]="isTravaOpen(2)"></div>
+        <div class="trava" [class.open]="isTravaOpen(3)"></div>
+      </div>
+      <div class="cadeado-corpo" [class.open]="isCadeadoOpen()">
+        <div class="cadeado-argola"></div>
+      </div>
+    </div>
+  </div>
+  

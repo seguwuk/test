@@ -1,0 +1,46 @@
+.cadeado-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  
+  .cadeado-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cadeado-travas {
+    display: flex;
+  }
+  
+  .trava {
+    width: 20px;
+    height: 60px;
+    border: 2px solid black;
+    margin: 0 5px;
+  }
+  
+  .open {
+    background-color: green; /* cor para representar a trava aberta */
+  }
+  
+  .cadeado-corpo {
+    width: 80px;
+    height: 100px;
+    border: 2px solid black;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cadeado-argola {
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: #999;
+  }
+  
