@@ -7,9 +7,10 @@ import { GameService } from '../../../services/game.service';
   styleUrls: ['./porta1.component.css']
 })
 export class Porta1Component {
+
   constructor(private gameService: GameService) {}
 
-  openSmallLock(lockNumber: number) {
+  unlockSmallLock(lockNumber: number): void {
     this.gameService.unlockSmallLock('porta1', lockNumber);
   }
 

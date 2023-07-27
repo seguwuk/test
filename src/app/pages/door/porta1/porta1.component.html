@@ -2,25 +2,30 @@
 
 <!-- Cadeados menores -->
 <div class="small-locks">
-  <div class="small-lock" (click)="openSmallLock(1)">
-    <i class="fa" [class.fa-lock]="!isSmallLockUnlocked(1)" [class.fa-unlock]="isSmallLockUnlocked(1)"></i>
+  <div class="small-lock" (click)="unlockSmallLock(1)" [class.unlocked]="isSmallLockUnlocked(1)">
+    <div class="lock-body"></div>
+    <div class="lock-shackle"></div>
   </div>
-  <div class="small-lock" (click)="openSmallLock(2)">
-    <i class="fa" [class.fa-lock]="!isSmallLockUnlocked(2)" [class.fa-unlock]="isSmallLockUnlocked(2)"></i>
+  <div class="small-lock" (click)="unlockSmallLock(2)" [class.unlocked]="isSmallLockUnlocked(2)">
+    <div class="lock-body"></div>
+    <div class="lock-shackle"></div>
   </div>
-  <div class="small-lock" (click)="openSmallLock(3)">
-    <i class="fa" [class.fa-lock]="!isSmallLockUnlocked(3)" [class.fa-unlock]="isSmallLockUnlocked(3)"></i>
+  <div class="small-lock" (click)="unlockSmallLock(3)" [class.unlocked]="isSmallLockUnlocked(3)">
+    <div class="lock-body"></div>
+    <div class="lock-shackle"></div>
   </div>
 </div>
 
 <!-- Cadeado maior -->
-<div class="big-lock">
-  <i class="fa" [class.fa-lock]="!isBigLockUnlocked()" [class.fa-unlock]="isBigLockUnlocked()"></i>
+<div class="big-lock" [class.unlocked]="isBigLockUnlocked()">
+  <div class="lock-body"></div>
+  <div class="lock-shackle"></div>
 </div>
 
 <div class="instructions">
-  <p *ngIf="isSmallLockUnlocked(1) && !isSmallLockUnlocked(2)">Clique nos cadeados menores para abri-los.</p>
-  <p *ngIf="isSmallLockUnlocked(2) && !isSmallLockUnlocked(3)">Clique nos cadeados menores restantes.</p>
+  <p *ngIf="!isSmallLockUnlocked(1)">Clique nos cadeados menores para abri-los.</p>
+  <p *ngIf="isSmallLockUnlocked(1) && !isSmallLockUnlocked(2)">Clique nos cadeados menores restantes.</p>
+  <p *ngIf="isSmallLockUnlocked(2) && !isSmallLockUnlocked(3)">Clique no último cadeado menor.</p>
   <p *ngIf="isSmallLockUnlocked(3) && !isBigLockUnlocked()">Clique no cadeado maior para abrir a porta!</p>
   <p *ngIf="isBigLockUnlocked()">Parabéns! A porta está aberta!</p>
 </div>
