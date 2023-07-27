@@ -5,9 +5,9 @@
 
 .small-lock,
 .big-lock {
-  width: 20px;
-  height: 20px;
-  background-color: #f78989;
+  width: 80px;
+  height: 100px;
+  background-color: #333;
   margin: 10px;
 }
 
@@ -16,15 +16,7 @@
 }
 
 .big-lock {
-  cursor: default; 
-  font-size: 40px;
-  width: 40px;
-  height: 42px;
-}
-
-.big-locks {
-  display: flex;
-  justify-content: center;
+  cursor: default;
 }
 
 .unlocked {
