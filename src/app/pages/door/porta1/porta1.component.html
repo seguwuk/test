@@ -3,19 +3,19 @@
 <!-- Cadeados menores -->
 <div class="small-locks">
   <div class="small-lock" (click)="openSmallLock(1)">
-    <i class="fa" [class.fa-lock]="!isSmallLockOpen(1)" [class.fa-unlock]="isSmallLockOpen(1)"></i>
+    <fa-icon [icon]="['fas', isSmallLockOpen(1) ? 'unlock' : 'lock']" [class.unlocked]="isSmallLockOpen(1)"></fa-icon>
   </div>
   <div class="small-lock" (click)="openSmallLock(2)">
-    <i class="fa" [class.fa-lock]="!isSmallLockOpen(2)" [class.fa-unlock]="isSmallLockOpen(2)"></i>
+    <fa-icon [icon]="['fas', isSmallLockOpen(2) ? 'unlock' : 'lock']" [class.unlocked]="isSmallLockOpen(2)"></fa-icon>
   </div>
   <div class="small-lock" (click)="openSmallLock(3)">
-    <i class="fa" [class.fa-lock]="!isSmallLockOpen(3)" [class.fa-unlock]="isSmallLockOpen(3)"></i>
+    <fa-icon [icon]="['fas', isSmallLockOpen(3) ? 'unlock' : 'lock']" [class.unlocked]="isSmallLockOpen(3)"></fa-icon>
   </div>
 </div>
 
 <!-- Cadeado maior -->
 <div class="big-lock">
-  <i class="fa" [class.fa-lock]="!isBigLockOpen" [class.fa-unlock]="isBigLockOpen"></i>
+  <fa-icon [icon]="['fas', isBigLockOpen ? 'unlock' : 'lock']"></fa-icon>
 </div>
 
 <div class="instructions">

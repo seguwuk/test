@@ -5,7 +5,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { GameService } from './services/game.service';
-import { DoorRoutingModule } from './pages/door/door.routing.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { DoorRoutingModule } from './pages/door/door.routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule 
   ],
   providers: [
     GameService
