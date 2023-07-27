@@ -1,82 +1,24 @@
-/* Adicione essas classes ao seu CSS */
-
-/* Estilo para os cadeados menores */
 .small-locks {
   display: flex;
-  justify-content: space-between;
-  width: 300px;
-  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.small-lock,
+.big-lock {
+  width: 80px;
+  height: 100px;
+  background-color: #333;
+  margin: 10px;
 }
 
 .small-lock {
-  position: relative;
-  width: 60px;
-  height: 100px;
-  background-color: #ccc;
-  border-radius: 10px;
   cursor: pointer;
 }
 
-.small-lock .lock-body {
-  position: absolute;
-  top: 30px;
-  left: 10px;
-  width: 40px;
-  height: 40px;
-  background-color: #222;
-  border-radius: 5px;
-}
-
-.small-lock .lock-shackle {
-  position: absolute;
-  top: 10px;
-  left: 25px;
-  width: 10px;
-  height: 20px;
-  background-color: #222;
-}
-
-.small-lock.unlocked .lock-body {
-  background-color: #ffd700;
-}
-
-.small-lock.unlocked .lock-shackle {
-  background-color: #ffd700;
-}
-
-/* Estilo para o cadeado maior */
 .big-lock {
-  width: 100px;
-  height: 200px;
-  background-color: #ccc;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-bottom: 20px;
+  cursor: default;
 }
 
-.big-lock .lock-body {
-  position: absolute;
-  top: 60px;
-  left: 30px;
-  width: 40px;
-  height: 80px;
-  background-color: #222;
-  border-radius: 10px;
-}
-
-.big-lock .lock-shackle {
-  position: absolute;
-  top: 30px;
-  left: 50px;
-  width: 20px;
-  height: 40px;
-  background-color: #222;
-}
-
-.big-lock.unlocked .lock-body {
-  background-color: #ffd700;
-}
-
-.big-lock.unlocked .lock-shackle {
-  background-color: #ffd700;
+.unlocked {
+  background-color: #4caf50;
 }

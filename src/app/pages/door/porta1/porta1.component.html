@@ -2,25 +2,13 @@
 
 <!-- Cadeados menores -->
 <div class="small-locks">
-  <div class="small-lock" (click)="unlockSmallLock(1)" [class.unlocked]="isSmallLockUnlocked(1)">
-    <div class="lock-body"></div>
-    <div class="lock-shackle"></div>
-  </div>
-  <div class="small-lock" (click)="unlockSmallLock(2)" [class.unlocked]="isSmallLockUnlocked(2)">
-    <div class="lock-body"></div>
-    <div class="lock-shackle"></div>
-  </div>
-  <div class="small-lock" (click)="unlockSmallLock(3)" [class.unlocked]="isSmallLockUnlocked(3)">
-    <div class="lock-body"></div>
-    <div class="lock-shackle"></div>
-  </div>
+  <div class="small-lock" [class.unlocked]="isSmallLockUnlocked(1)" (click)="unlockSmallLock(1)"></div>
+  <div class="small-lock" [class.unlocked]="isSmallLockUnlocked(2)" (click)="unlockSmallLock(2)"></div>
+  <div class="small-lock" [class.unlocked]="isSmallLockUnlocked(3)" (click)="unlockSmallLock(3)"></div>
 </div>
 
 <!-- Cadeado maior -->
-<div class="big-lock" [class.unlocked]="isBigLockUnlocked()">
-  <div class="lock-body"></div>
-  <div class="lock-shackle"></div>
-</div>
+<div class="big-lock" [class.unlocked]="isBigLockUnlocked()"></div>
 
 <div class="instructions">
   <p *ngIf="!isSmallLockUnlocked(1)">Clique nos cadeados menores para abri-los.</p>

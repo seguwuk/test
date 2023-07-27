@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
-import { GameService } from '../../../services/game.service';
+import { GameService } from 'src/app/services/game.service';
 
 @Component({
   selector: 'app-porta1',
   templateUrl: './porta1.component.html',
-  styleUrls: ['./porta1.component.css']
+  styleUrls: ['./porta1.component.css'],
 })
 export class Porta1Component {
-
   constructor(private gameService: GameService) {}
 
-  unlockSmallLock(lockNumber: number): void {
+  unlockSmallLock(lockNumber: number) {
     this.gameService.unlockSmallLock('porta1', lockNumber);
   }
 
