@@ -1,11 +1,11 @@
 <div class="cadeado-container">
     <div class="cadeado-body">
       <div class="cadeado-travas">
-        <div class="trava" [class.open]="isTravaOpen(1)"></div>
-        <div class="trava" [class.open]="isTravaOpen(2)"></div>
-        <div class="trava" [class.open]="isTravaOpen(3)"></div>
+        <div class="trava" [class.open]="isCadeadoPequenoOpen(0)" (click)="openCadeadoPequeno(0)"></div>
+        <div class="trava" [class.open]="isCadeadoPequenoOpen(1)" (click)="openCadeadoPequeno(1)"></div>
+        <div class="trava" [class.open]="isCadeadoPequenoOpen(2)" (click)="openCadeadoPequeno(2)"></div>
       </div>
-      <div class="cadeado-corpo" [class.open]="isCadeadoOpen()">
+      <div class="cadeado-corpo" [class.open]="isCadeadoGrandeOpen()" (click)="openCadeadoGrande()">
         <div class="cadeado-argola"></div>
       </div>
     </div>
