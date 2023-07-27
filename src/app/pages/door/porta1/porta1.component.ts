@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GameService } from 'src/app/services/game.service';
+import { GameService } from '../../../services/game.service';
 
 @Component({
   selector: 'app-porta1',
@@ -13,11 +13,11 @@ export class Porta1Component {
     this.gameService.unlockSmallLock('porta1', lockNumber);
   }
 
-  isSmallLockOpen(lockNumber: number): boolean {
+  isSmallLockUnlocked(lockNumber: number): boolean {
     return this.gameService.isSmallLockUnlocked('porta1', lockNumber);
   }
 
-  isBigLockOpen(): boolean {
+  isBigLockUnlocked(): boolean {
     return this.gameService.isBigLockUnlocked('porta1');
   }
 }

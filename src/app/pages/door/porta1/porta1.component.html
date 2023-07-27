@@ -3,25 +3,24 @@
 <!-- Cadeados menores -->
 <div class="small-locks">
   <div class="small-lock" (click)="openSmallLock(1)">
-    <i class="fas" [class.fa-lock]="!isSmallLockOpen(1)" [class.fa-unlock]="isSmallLockOpen(1)"></i>
+    <i class="fa" [class.fa-lock]="!isSmallLockUnlocked(1)" [class.fa-unlock]="isSmallLockUnlocked(1)"></i>
   </div>
   <div class="small-lock" (click)="openSmallLock(2)">
-    <i class="fas" [class.fa-lock]="!isSmallLockOpen(2)" [class.fa-unlock]="isSmallLockOpen(2)"></i>
+    <i class="fa" [class.fa-lock]="!isSmallLockUnlocked(2)" [class.fa-unlock]="isSmallLockUnlocked(2)"></i>
   </div>
   <div class="small-lock" (click)="openSmallLock(3)">
-    <i class="fas" [class.fa-lock]="!isSmallLockOpen(3)" [class.fa-unlock]="isSmallLockOpen(3)"></i>
+    <i class="fa" [class.fa-lock]="!isSmallLockUnlocked(3)" [class.fa-unlock]="isSmallLockUnlocked(3)"></i>
   </div>
 </div>
 
 <!-- Cadeado maior -->
 <div class="big-lock">
-  <i class="fas" [class.fa-lock]="!isBigLockOpen()" [class.fa-unlock]="isBigLockOpen()"></i>
+  <i class="fa" [class.fa-lock]="!isBigLockUnlocked()" [class.fa-unlock]="isBigLockUnlocked()"></i>
 </div>
 
 <div class="instructions">
-  <p *ngIf="!isSmallLockOpen(1)">Clique nos cadeados menores para abri-los.</p>
-  <p *ngIf="isSmallLockOpen(1) && !isSmallLockOpen(2)">Clique nos cadeados menores restantes.</p>
-  <p *ngIf="isSmallLockOpen(2) && !isSmallLockOpen(3)">Clique no último cadeado menor.</p>
-  <p *ngIf="isSmallLockOpen(3) && !isBigLockOpen()">Clique no cadeado maior para abrir a porta!</p>
-  <p *ngIf="isBigLockOpen()">Parabéns! A porta está aberta!</p>
+  <p *ngIf="isSmallLockUnlocked(1) && !isSmallLockUnlocked(2)">Clique nos cadeados menores para abri-los.</p>
+  <p *ngIf="isSmallLockUnlocked(2) && !isSmallLockUnlocked(3)">Clique nos cadeados menores restantes.</p>
+  <p *ngIf="isSmallLockUnlocked(3) && !isBigLockUnlocked()">Clique no cadeado maior para abrir a porta!</p>
+  <p *ngIf="isBigLockUnlocked()">Parabéns! A porta está aberta!</p>
 </div>

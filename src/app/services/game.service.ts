@@ -1,41 +1,50 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class GameService {
   private unlockSequence: string[] = ['porta1', 'porta2', 'porta3', 'gato'];
   private unlockedPages: string[] = [];
-  private smallLocks: boolean[] = [false, false, false];
-  private bigLockOpen = false;
+
+  constructor() {}
 
   isPageUnlocked(page: string): boolean {
     const pageIndex = this.unlockedPages.indexOf(page);
     return pageIndex !== -1;
   }
 
-  unlockPage(page: string): void {
-    this.unlockedPages.push(page);
-  }
-
-  isSmallLockOpen(lockNumber: number): boolean {
-    return this.smallLocks[lockNumber - 1];
-  }
-
-  openSmallLock(lockNumber: number): void {
-    if (this.isSmallLockOpen(lockNumber - 1)) {
-      this.smallLocks[lockNumber - 1] = true;
-    } else {
-      this.smallLocks.fill(false, lockNumber - 1);
+  unlockSmallLock(page: string, lockNumber: number): void {
+    if (lockNumber === 1) {
+      this.unlockPage('porta1');
+    } else if (lockNumber === 2 && this.isSmallLockUnlocked('porta1', 1)) {
+      this.unlockPage('porta1');
+    } else if (lockNumber === 3 && this.isSmallLockUnlocked('porta1', 2)) {
+      this.unlockPage('porta1');
     }
   }
 
-  get isBigLockOpen(): boolean {
-    return this.bigLockOpen;
+  isSmallLockUnlocked(page: string, lockNumber: number): boolean {
+    if (page !== 'porta1' || lockNumber < 1 || lockNumber > 3) {
+      return false;
+    }
+
+    const index = this.unlockedPages.indexOf(`porta1_small${lockNumber}`);
+    return index !== -1;
   }
 
-  openBigLock(): void {
-    if (this.smallLocks.every(lock => lock)) {
-      this.bigLockOpen = true;
-      this.unlockPage('porta1');
+  isBigLockUnlocked(page: string): boolean {
+    if (page !== 'porta1') {
+      return false;
+    }
+
+    const index = this.unlockedPages.indexOf('porta1_big');
+    return index !== -1;
+  }
+
+  private unlockPage(page: string): void {
+    if (!this.isPageUnlocked(page)) {
+      this.unlockedPages.push(page);
     }
   }
 }
