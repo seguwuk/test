@@ -2,13 +2,23 @@
 
 <!-- Cadeados menores -->
 <div class="small-locks">
-  <div class="small-lock" [class.unlocked]="isSmallLockUnlocked(1)" (click)="unlockSmallLock(1)"></div>
-  <div class="small-lock" [class.unlocked]="isSmallLockUnlocked(2)" (click)="unlockSmallLock(2)"></div>
-  <div class="small-lock" [class.unlocked]="isSmallLockUnlocked(3)" (click)="unlockSmallLock(3)"></div>
+  <div class="small-lock" (click)="unlockSmallLock(1)" [class.unlocked]="isSmallLockUnlocked(1)">
+    <i class="fa" [class.fa-lock]="!isSmallLockUnlocked(1)" [class.fa-unlock]="isSmallLockUnlocked(1)"></i>
+  </div>
+  <div class="small-lock" (click)="unlockSmallLock(2)" [class.unlocked]="isSmallLockUnlocked(2)">
+    <i class="fa" [class.fa-lock]="!isSmallLockUnlocked(2)" [class.fa-unlock]="isSmallLockUnlocked(2)"></i>
+  </div>
+  <div class="small-lock" (click)="unlockSmallLock(3)" [class.unlocked]="isSmallLockUnlocked(3)">
+    <i class="fa" [class.fa-lock]="!isSmallLockUnlocked(3)" [class.fa-unlock]="isSmallLockUnlocked(3)"></i>
+  </div>
 </div>
 
 <!-- Cadeado maior -->
-<div class="big-lock" [class.unlocked]="isBigLockUnlocked()"></div>
+<div class="class big-locks">
+  <div class="big-lock" (click)="unlockBigLock()" [class.unlocked]="isBigLockUnlocked()">
+    <i class="fa" [class.fa-lock]="!isBigLockUnlocked()" [class.fa-unlock]="isBigLockUnlocked()"></i>
+  </div>
+</div>
 
 <div class="instructions">
   <p *ngIf="!isSmallLockUnlocked(1)">Clique nos cadeados menores para abri-los.</p>

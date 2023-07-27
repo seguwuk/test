@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { GameService } from './services/game.service';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -17,8 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FontAwesomeModule 
+    AppRoutingModule
   ],
   providers: [
     GameService
