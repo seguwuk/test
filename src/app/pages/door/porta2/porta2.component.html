@@ -1,1 +1,22 @@
-<p>porta2 works!</p>
+<h1>Porta 2</h1>
+
+<!-- Cadeados menores -->
+<div class="small-locks">
+  <div class="small-lock" (click)="unlockLock(1)" [class.unlocked]="isLockUnlocked(1)">
+    <i class="fa" [class.fa-lock]="!isLockUnlocked(1)" [class.fa-unlock]="isLockUnlocked(1)"></i>
+  </div>
+  <div class="small-lock" (click)="unlockLock(2)" [class.unlocked]="isLockUnlocked(2)">
+    <i class="fa" [class.fa-lock]="!isLockUnlocked(2)" [class.fa-unlock]="isLockUnlocked(2)"></i>
+  </div>
+  <div class="small-lock" (click)="unlockLock(3)" [class.unlocked]="isLockUnlocked(3)">
+    <i class="fa" [class.fa-lock]="!isLockUnlocked(3)" [class.fa-unlock]="isLockUnlocked(3)"></i>
+  </div>
+  <div class="small-lock" (click)="unlockLock(4)" [class.unlocked]="isLockUnlocked(4)">
+    <i class="fa" [class.fa-lock]="!isLockUnlocked(4)" [class.fa-unlock]="isLockUnlocked(4)"></i>
+  </div>
+</div>
+
+<!-- Cadeado maior -->
+<div class="big-lock" (click)="unlockBigLock()" [class.unlocked]="isBigLockUnlocked()">
+  <i class="fa" [class.fa-lock]="!isBigLockUnlocked()" [class.fa-unlock]="isBigLockUnlocked()"></i>
+</div>
